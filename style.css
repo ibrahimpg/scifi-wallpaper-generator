@@ -29,16 +29,10 @@ input, button, textarea, select {
   background-repeat: no-repeat;
   background-image: url("./images/2.jpg");
   background-color: #080808;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .button {
   width: 100px;
   height: 7vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   background-color: rgba(0,0,0,0.8);
   color: #ffffff;
@@ -47,12 +41,14 @@ input, button, textarea, select {
   font-size: 1.2em;
 }
 #footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   background-color: #000000;
   color: #ffffff;
   font-size: 1.2em;
   height: 7vh;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
