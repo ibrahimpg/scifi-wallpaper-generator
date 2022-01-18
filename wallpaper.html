@@ -26,5 +26,7 @@
 
   const likeImg = async () => {
     document.getElementById('likeBtn').innerHTML = '❤️';
+    const url = `likeImgFunc.php?likedImg=${currentImg}`;
+    const response = await fetch(url);
   }
 </script>
