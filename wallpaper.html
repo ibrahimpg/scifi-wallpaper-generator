@@ -1,21 +1,30 @@
 <div id='wallpaper' class='flex-center'>
+  <div class='button flex-center' onclick='likeImg()' id='likeBtn'>🖤</div>
   <div class='button flex-center' onclick='downloadImg()'>Download</div>
   <div class='button flex-center' onclick='loadImg()'>Generate</div>
 </div>
 
 <script>
   let currentImg = 'greg-rakozy-oMpAz-DN-9I-unsplash.jpg';
+  document.getElementById('wallpaper').style.backgroundImage = `url('./images/${currentImg}')`;
+
   const loadImg = async () => {
     const url = `loadImgFunc.php?currentImg=${currentImg}`;
     const response = await fetch(url);
     const jsonRes = await response.json();
     currentImg = jsonRes;
-    document.getElementById('wallpaper').style.backgroundImage = `url("./images/${jsonRes}")`;
+    document.getElementById('likeBtn').innerHTML = '🖤';
+    document.getElementById('wallpaper').style.backgroundImage = `url('./images/${jsonRes}')`;
   }
+
   const downloadImg = async () => {
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.download = currentImg;
     link.href = `./images/${currentImg}`;
     link.click();
+  }
+
+  const likeImg = async () => {
+    document.getElementById('likeBtn').innerHTML = '❤️';
   }
 </script>

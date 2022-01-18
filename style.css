@@ -27,7 +27,6 @@ input, button, textarea, select {
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  background-image: url("./images/2.jpg");
   background-color: #080808;
 }
 .button {
@@ -51,4 +50,7 @@ input, button, textarea, select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#likeBtn {
+  font-size: 1.7em;
 }
