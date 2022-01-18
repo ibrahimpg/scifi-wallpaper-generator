@@ -1,0 +1,21 @@
+<div id='wallpaper'>
+  <div class='button' onclick='downloadImg()'>Download</div>
+  <div class='button' onclick='loadImg()'>Randomize</div>
+</div>
+
+<script>
+  let currentImg = '2.jpg';
+  const loadImg = async () => {
+    const url = `loadImgFunc.php?currentImg=${currentImg}`;
+    const response = await fetch(url);
+    const jsonRes = await response.json();
+    currentImg = jsonRes;
+    document.getElementById('wallpaper').style.backgroundImage = `url("./images/${jsonRes}")`;
+  }
+  const downloadImg = async () => {
+    const link = document.createElement("a");
+    link.download = currentImg;
+    link.href = `./images/${currentImg}`;
+    link.click();
+  }
+</script>
