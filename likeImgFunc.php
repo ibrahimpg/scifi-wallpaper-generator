@@ -11,7 +11,7 @@
     try {
       $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO Likes (imgName) VALUES ($likedImg)";
+      $sql = "INSERT INTO Likes (imgName) VALUES (\"$likedImg\")";
       $conn->exec($sql);
       return json_encode('Successfully liked image.');
     } catch(PDOException $e) {
