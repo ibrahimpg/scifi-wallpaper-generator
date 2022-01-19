@@ -51,6 +51,10 @@ input, button, textarea, select {
   justify-content: center;
   align-items: center;
 }
-#likeBtn {
+#likeBtn, #likedBtn {
   font-size: 1.7em;
+}
+#likedBtn {
+  display: none;
+  cursor: auto;
 }

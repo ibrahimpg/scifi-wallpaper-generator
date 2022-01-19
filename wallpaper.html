@@ -1,5 +1,6 @@
 <div id='wallpaper' class='flex-center'>
   <div class='button flex-center' onclick='likeImg()' id='likeBtn'>🖤</div>
+  <div class='button flex-center' id='likedBtn'>❤️</div>
   <div class='button flex-center' onclick='downloadImg()'>Download</div>
   <div class='button flex-center' onclick='loadImg()'>Generate</div>
 </div>
@@ -9,11 +10,12 @@
   document.getElementById('wallpaper').style.backgroundImage = `url('./images/${currentImg}')`;
 
   const loadImg = async () => {
+    document.getElementById('likeBtn').style.display = 'flex';
+    document.getElementById('likedBtn').style.display = 'none';
     const url = `loadImgFunc.php?currentImg=${currentImg}`;
     const response = await fetch(url);
     const jsonRes = await response.json();
     currentImg = jsonRes;
-    document.getElementById('likeBtn').innerHTML = '🖤';
     document.getElementById('wallpaper').style.backgroundImage = `url('./images/${jsonRes}')`;
   }
 
@@ -25,7 +27,8 @@
   }
 
   const likeImg = async () => {
-    document.getElementById('likeBtn').innerHTML = '❤️';
+    document.getElementById('likeBtn').style.display = 'none';
+    document.getElementById('likedBtn').style.display = 'flex';
     const url = `likeImgFunc.php?likedImg=${currentImg}`;
     const response = await fetch(url);
     const jsonRes = await response.json();
