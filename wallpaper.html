@@ -28,5 +28,7 @@
     document.getElementById('likeBtn').innerHTML = '❤️';
     const url = `likeImgFunc.php?likedImg=${currentImg}`;
     const response = await fetch(url);
+    const jsonRes = await response.json();
+    console.log(jsonRes);
   }
 </script>

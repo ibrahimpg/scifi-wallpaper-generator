@@ -13,9 +13,9 @@
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $sql = "INSERT INTO Likes (imgName) VALUES ($likedImg)";
       $conn->exec($sql);
-      echo json_encode('Successfully liked image.');
+      return json_encode('Successfully liked image.');
     } catch(PDOException $e) {
-      echo json_encode($sql . " - " . $e->getMessage());
+      return json_encode($url . " - " . $e->getMessage());
     }
     
     $conn = null;
