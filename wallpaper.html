@@ -10,13 +10,13 @@
   document.getElementById('wallpaper').style.backgroundImage = `url('./images/${currentImg}')`;
 
   const loadImg = async () => {
-    document.getElementById('likeBtn').style.display = 'flex';
-    document.getElementById('likedBtn').style.display = 'none';
     const url = `loadImgFunc.php?currentImg=${currentImg}`;
     const response = await fetch(url);
     const jsonRes = await response.json();
     currentImg = jsonRes;
     document.getElementById('wallpaper').style.backgroundImage = `url('./images/${jsonRes}')`;
+    document.getElementById('likeBtn').style.display = 'flex';
+    document.getElementById('likedBtn').style.display = 'none';
   }
 
   const downloadImg = async () => {
