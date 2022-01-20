@@ -1,6 +1,11 @@
 <?php
+  // require './dotenv.php';
+  // use DevCoder\DotEnv;
+  // $dotenv = new Dotenv(__DIR__ . '/.env');
+  // $dotenv->load();
+
   function likeImg($likedImg) {
-    $url = getenv('JAWSDB_URL');
+    $url = $_SERVER['JAWSDB_URL'];
     $dbparts = parse_url($url);
 
     $hostname = $dbparts['host'];
